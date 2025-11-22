@@ -1,0 +1,15 @@
+const mysql = require('mysql2');
+
+const pool = mysql.createPool({
+    host: '127.0.0.1',
+    user: 'root', 
+    password: '', 
+    database: 'campus_event_mgmt',
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
+});
+
+const promisePool = pool.promise();
+
+module.exports = promisePool;

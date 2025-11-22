@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Event Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎓 Campus Event Management System</h1>
+            <nav>
+                <button class="nav-btn active" onclick="showSection('events')">Events</button>
+                <button class="nav-btn" onclick="showSection('registrations')">Registrations</button>
+                <button class="nav-btn" onclick="showSection('analytics')">Analytics</button>
+            </nav>
+        </header>
+        <section id="events-section" class="section active">
+            <h2>All Events</h2>
+            <div id="events-list" class="cards-container">
+            </div>
+        </section>
+        <section id="registrations-section" class="section">
+            <h2>Event Registration</h2>
+            <div class="form-container">
+                <form id="registration-form">
+                    <div class="form-group">
+                        <label for="event-select">Select Event:</label>
+                        <select id="event-select" required>
+                            <option value="">Choose an event...</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="student-id">Student ID:</label>
+                        <input type="number" id="student-id" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="student-name">Student Name:</label>
+                        <input type="text" id="student-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="student-email">Email:</label>
+                        <input type="email" id="student-email" required>
+                    </div>
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+        </section>
+        <section id="analytics-section" class="section">
+            <h2>Event Analytics</h2>
+            <div class="analytics-container">
+                <div class="stats-grid" id="stats-grid">
+                </div>
+                <div class="revenue-report">
+                    <h3>Revenue Report</h3>
+                    <table id="revenue-table">
+                        <thead>
+                            <tr>
+                                <th>Event</th>
+                                <th>Total Revenue</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <div id="event-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modal-title">Event Details</h2>
+                <div id="modal-content">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
